@@ -1,0 +1,12 @@
+<?php
+// Set the cookie named "user" with the value "John" and expiration time 30 days from now
+setcookie("user", "John", time() + (30 * 24 * 60 * 60), "/");
+
+// Retrieve the value of the cookie named "user"
+if(isset($_COOKIE['user'])) {
+    $username = $_COOKIE['user'];
+    echo "Welcome back, $username!";
+} else {
+    echo "Cookie 'user' not set!";
+}
+?>

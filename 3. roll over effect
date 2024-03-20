@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rollover Effect for Image in Heading</title>
+<style>
+    h1 img:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<h1><img id="logo" src="original_image.jpg" alt="Logo"></h1>
+
+<script>
+    const logo = document.getElementById("logo");
+
+    logo.addEventListener("mouseenter", () => {
+        logo.src = "rollover_image.jpg";
+    });
+
+    logo.addEventListener("mouseleave", () => {
+        logo.src = "original_image.jpg";
+    });
+</script>
+
+</body>
+</html>

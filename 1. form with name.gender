@@ -1,0 +1,32 @@
+// (a) Create a form with fields "Name" and "Gender" and prompt for missing fields
+function createForm() {
+    let name = prompt("Please enter your name:");
+    let gender = prompt("Please enter your gender:");
+
+    while (!name || !gender) {
+        if (!name) {
+            name = prompt("Name field is missing. Please enter your name:");
+        }
+        if (!gender) {
+            gender = prompt("Gender field is missing. Please enter your gender:");
+        }
+    }
+
+    // Process the form data
+    console.log("Name:", name);
+    console.log("Gender:", gender);
+}
+
+// Call the function to create the form
+createForm();
+
+// (b) Make the status bar give different messages based on mouse pointer position
+const image = document.getElementById("your_image_id");
+
+image.addEventListener("mouseover", () => {
+    window.status = "Mouse pointer is over the image.";
+});
+
+image.addEventListener("mouseout", () => {
+    window.status = "Mouse pointer is not over the image.";
+});

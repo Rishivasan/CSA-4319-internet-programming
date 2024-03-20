@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Operations</title>
+</head>
+<body>
+
+<?php
+// Check if cookies are enabled
+if(count($_COOKIE) > 0) {
+    echo "<p>Cookies are enabled.</p>";
+} else {
+    echo "<p>Cookies are disabled.</p>";
+}
+
+// Modify cookie value
+setcookie("username", "John", time() + 3600, "/"); // Set the cookie
+if(isset($_COOKIE['username'])) {
+    $username = $_COOKIE['username'];
+    $newUsername = $username . " Doe"; // Modify the username
+    setcookie("username", $newUsername, time() + 3600, "/"); // Update the cookie value
+    echo "Cookie value modified. New username: " . $newUsername;
+} else {
+    echo "Cookie 'username' not set!";
+}
+?>
+
+</body>
+</html>

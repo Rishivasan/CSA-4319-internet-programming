@@ -1,0 +1,30 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/form")
+public class FormServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        
+        String textFieldValue = request.getParameter("textfield");
+        String radioButtonValue = request.getParameter("radio");
+        String checkboxValue = request.getParameter("checkbox");
+        String dropdownValue = request.getParameter("dropdown");
+
+        out.println("<html><head><title>Form Data</title></head><body>");
+        out.println("<h2>Form Data:</h2>");
+        out.println("<p>Text Field Value: " + textFieldValue + "</p>");
+        out.println("<p>Radio Button Value: " + radioButtonValue + "</p>");
+        out.println("<p>Checkbox Value: " + checkboxValue + "</p>");
+        out.println("<p>Dropdown Value: " + dropdownValue + "</p>");
+        out.println("</body></html>");
+    }
+}

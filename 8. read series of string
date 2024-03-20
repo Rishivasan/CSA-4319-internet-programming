@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Operations</title>
+</head>
+<body>
+
+<label for="inputString">Enter series of strings:</label><br>
+<input type="text" id="inputString"><br>
+<button onclick="filterAndCount()">Filter Strings & Count Occurrences</button><br>
+<textarea id="output" rows="8" cols="50" readonly></textarea>
+
+<script>
+function filterAndCount() {
+    const inputString = document.getElementById("inputString").value.toLowerCase();
+    const filteredStrings = inputString.split(" ").filter(str => str.startsWith("b"));
+    const letterCounts = {};
+
+    for (const char of inputString) {
+        if (/[a-z]/.test(char)) {
+            letterCounts[char] = (letterCounts[char] || 0) + 1;
+        }
+    }
+
+    const output = Strings starting with 'b':\n${filteredStrings.join("\n")}\n\nLetter Occurrences:\n${Object.entries(letterCounts).map(([letter, count]) => `${letter}: ${count}).join("\n")}`;
+    document.getElementById("output").value = output;
+}
+</script>
+
+</body>
+</html>

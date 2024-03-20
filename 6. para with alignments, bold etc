@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modify Paragraph Style</title>
+<style>
+    #collegeInfo {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: black;
+    }
+</style>
+</head>
+<body>
+
+<form id="styleForm">
+    <input type="submit" value="Change" id="changeButton">
+</form>
+
+<p id="collegeInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+
+<script>
+    const paragraph = document.getElementById("collegeInfo");
+
+    // Function to change style on form submission
+    document.getElementById("styleForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        paragraph.style.fontFamily = "Verdana, Geneva, sans-serif";
+        paragraph.style.fontSize = "18px";
+        paragraph.style.color = "blue";
+    });
+
+    // Function to highlight bold words on mouseover
+    paragraph.addEventListener("mouseover", function(event) {
+        if (event.target.tagName === "STRONG") {
+            event.target.style.backgroundColor = "yellow";
+        }
+    });
+
+    // Reset highlighting on mouseout
+    paragraph.addEventListener("mouseout", function(event) {
+        if (event.target.tagName === "STRONG") {
+            event.target.style.backgroundColor = "transparent";
+        }
+    });
+</script>
+
+</body>
+</html>

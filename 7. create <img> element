@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Append Image on Button Click</title>
+</head>
+<body>
+
+<button id="createImageButton">Create Image</button>
+
+<script>
+    document.getElementById("createImageButton").addEventListener("click", function() {
+        // Create the img element
+        const image = document.createElement("img");
+        
+        // Set the source and alt attributes for the image
+        image.src = "image.jpg"; // Replace "image.jpg" with the path to your image
+        image.alt = "Description of the image";
+
+        // Append the image to the document body
+        document.body.appendChild(image);
+    });
+</script>
+
+</body>
+</html>
